@@ -1,0 +1,48 @@
+// Residencial LoadShape
+New LoadShape.Residencial npts=24 interval=0
+~ csvfile="./data/loadFactor/residencialLoadShape.csv"
+
+// Industrial LoadShape
+New LoadShape.Industrial npts=24 interval=0
+~ csvfile="./data/loadFactor/industrialLoadShape.csv"
+
+// Override Vminpu property to allow convergence at a lower per unit voltage.
+// Define the daily load shape
+Load.s860.vminpu=0.85 daily=residencial
+Load.s840.vminpu=0.85 daily=residencial
+Load.s844.vminpu=0.85 daily=industrial
+Load.s848.vminpu=0.85 daily=residencial
+Load.s830a.vminpu=0.85 daily=residencial
+Load.s830b.vminpu=0.85 daily=residencial
+Load.s830c.vminpu=0.85 daily=residencial
+Load.s890.vminpu=0.85 daily=industrial
+Load.d802_806b.vminpu=0.85 daily=residencial
+Load.d802_806c.vminpu=0.85 daily=residencial
+Load.d808_810b.vminpu=0.85 daily=residencial
+Load.d818_820a.vminpu=0.85 daily=residencial
+Load.d820_822a.vminpu=0.85 daily=residencial
+Load.d816_824b.vminpu=0.85 daily=residencial
+Load.d824_826b.vminpu=0.85 daily=residencial
+Load.d824_828c.vminpu=0.85 daily=residencial
+Load.d828_830a.vminpu=0.85 daily=residencial
+Load.d854_856b.vminpu=0.85 daily=residencial
+Load.d832_858a.vminpu=0.85 daily=residencial
+Load.d832_858b.vminpu=0.85 daily=residencial
+Load.d832_858c.vminpu=0.85 daily=residencial
+Load.d858_864a.vminpu=0.85 daily=residencial
+Load.d858_834a.vminpu=0.85 daily=residencial
+Load.d858_834b.vminpu=0.85 daily=residencial
+Load.d858_834c.vminpu=0.85 daily=residencial
+Load.d834_860a.vminpu=0.85 daily=residencial
+Load.d834_860b.vminpu=0.85 daily=residencial
+Load.d834_860c.vminpu=0.85 daily=residencial
+Load.d860_836a.vminpu=0.85 daily=residencial
+Load.d860_836b.vminpu=0.85 daily=residencial
+Load.d860_836c.vminpu=0.85 daily=residencial
+Load.d836_840a.vminpu=0.85 daily=residencial
+Load.d836_840b.vminpu=0.85 daily=residencial
+Load.d862_838b.vminpu=0.85 daily=residencial
+Load.d842_844a.vminpu=0.85 daily=residencial
+Load.d844_846b.vminpu=0.85 daily=residencial
+Load.d844_846c.vminpu=0.85 daily=residencial
+Load.d846_848b.vminpu=0.85 daily=residencial

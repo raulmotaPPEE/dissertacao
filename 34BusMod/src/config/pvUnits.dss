@@ -1,0 +1,54 @@
+// Irradiation Curve
+New LoadShape.DailyIrrad npts=24 interval=0
+~ csvfile="./data/pvSystem/dailyIrradiationLoadShape.csv"
+
+// Temperature Cruve
+New Tshape.DailyTemp npts=24 interval=0
+~ csvfile="./data/pvSystem/dailyTempShape.csv"
+
+// P-T Curve
+New XYcurve.PMPvsT npts=4
+~ csvfile="./data/pvSystem/PMPvsT.csv"
+
+// Inverter Efficiency Curve
+New XYcurve.EffCurve npts=4 
+~ csvfile="./data/pvSystem/InvEffCurve.csv"
+
+
+// PV Units - 3 phases
+New PVSystem.PV802ABC phases=3 bus1=802.1.2.3 kv=24.900 irrad= 0.98 Pmpp= 6.20 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV806ABC phases=3 bus1=806.1.2.3 kv=24.900 irrad= 0.98 Pmpp= 6.20 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV808ABC phases=3 bus1=808.1.2.3 kv=24.900 irrad= 0.98 Pmpp= 8.25 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV812ABC phases=3 bus1=812.1.2.3 kv=24.900 irrad= 0.98 Pmpp=12.40 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV814ABC phases=3 bus1=814.1.2.3 kv=24.900 irrad= 0.98 Pmpp= 6.20 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV850ABC phases=3 bus1=850.1.2.3 kv=24.900 irrad= 0.98 Pmpp=10.30 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV816ABC phases=3 bus1=816.1.2.3 kv=24.900 irrad= 0.98 Pmpp=30.00 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV824ABC phases=3 bus1=824.1.2.3 kv=24.900 irrad= 0.98 Pmpp= 1.80 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV828ABC phases=3 bus1=828.1.2.3 kv=24.900 irrad= 0.98 Pmpp=60.00 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV830ABC phases=3 bus1=830.1.2.3 kv=24.900 irrad= 0.98 Pmpp=30.00 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV854ABC phases=3 bus1=854.1.2.3 kv=24.900 irrad= 0.98 Pmpp=60.00 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV852ABC phases=3 bus1=852.1.2.3 kv=24.900 irrad= 0.98 Pmpp=60.00 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV832ABC phases=3 bus1=832.1.2.3 kv=24.900 irrad= 0.98 Pmpp= 1.80 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV888ABC phases=3 bus1=888.1.2.3 kv= 4.160 irrad= 0.98 Pmpp=30.00 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV890ABC phases=3 bus1=890.1.2.3 kv= 4.160 irrad= 0.98 Pmpp=40.00 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV858ABC phases=3 bus1=858.1.2.3 kv=24.900 irrad= 0.98 Pmpp=60.00 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV834ABC phases=3 bus1=834.1.2.3 kv=24.900 irrad= 0.98 Pmpp=16.50 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV842ABC phases=3 bus1=842.1.2.3 kv=24.900 irrad= 0.98 Pmpp=60.00 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV844ABC phases=3 bus1=844.1.2.3 kv=24.900 irrad= 0.98 Pmpp=12.90 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV846ABC phases=3 bus1=846.1.2.3 kv=24.900 irrad= 0.98 Pmpp=30.00 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV848ABC phases=3 bus1=848.1.2.3 kv=24.900 irrad= 0.98 Pmpp=60.00 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV860ABC phases=3 bus1=860.1.2.3 kv=24.900 irrad= 0.98 Pmpp=10.30 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV836ABC phases=3 bus1=836.1.2.3 kv=24.900 irrad= 0.98 Pmpp=16.50 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV840ABC phases=3 bus1=840.1.2.3 kv=24.900 irrad= 0.98 Pmpp=15.50 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+New PVSystem.PV862ABC phases=3 bus1=862.1.2.3 kv=24.900 irrad= 0.98 Pmpp=30.00 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp 
+
+
+// PV Units - 1 phase
+New PVSystem.PV810B phases=1 bus1=810.2 kv=14.376 irrad= 0.98 Pmpp=10.30 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp
+New PVSystem.PV818A phases=1 bus1=818.1 kv=14.376 irrad= 0.98 Pmpp= 1.80 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp
+New PVSystem.PV820A phases=1 bus1=820.1 kv=14.376 irrad= 0.98 Pmpp=30.00 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp
+New PVSystem.PV822A phases=1 bus1=822.1 kv=14.376 irrad= 0.98 Pmpp=15.50 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp
+New PVSystem.PV826B phases=1 bus1=826.2 kv=14.376 irrad= 0.98 Pmpp=10.30 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp
+New PVSystem.PV856B phases=1 bus1=856.2 kv=14.376 irrad= 0.98 Pmpp=10.30 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp
+New PVSystem.PV864A phases=1 bus1=864.1 kv=14.376 irrad= 0.98 Pmpp=60.00 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp
+New PVSystem.PV838B phases=1 bus1=838.2 kv=14.376 irrad= 0.98 Pmpp=60.00 temperature=25 PF=1 %cutin=0.1 %cutout=0.1 effcurve=EffCurve P-tCurve=PMPvsT Daily=DailyIrrad Tdaily=DailyTemp

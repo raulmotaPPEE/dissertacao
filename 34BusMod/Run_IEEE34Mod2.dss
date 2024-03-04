@@ -1,0 +1,90 @@
+
+!------------------------------------------------------------------------------------
+! Script to run IEEE 34-bus Test Feeder Mod 2
+!------------------------------------------------------------------------------------
+!
+! change the path to the appropriate location on your computer.
+
+Compile ieee34Mod2.dss
+Compile "src/config/loadShapes.dss"
+Compile pvUnits.dss
+
+
+CREG1A.EventLog=Yes
+CREG1B.EventLog=Yes
+CREG1C.EventLog=Yes
+CREG2A.EventLog=No
+CREG2B.EventLog=No
+CREG2C.EventLog=No
+
+
+New Energymeter.M1  Line.L1  1
+
+New Monitor.SUBXF_power element=Line.L1 terminal=1 mode=1 ppolar=no
+New Monitor.SUBXF_voltage element=Line.L1 terminal=1 mode=0
+New Monitor.S890_power element=Load.S890 terminal=1 mode=1 ppolar=no
+New Monitor.S890_voltage element=Load.S890 terminal=1 mode=0
+
+New Monitor.REG1A_tap element=Transformer.REG1A  terminal=1 mode=2
+New Monitor.REG1B_tap element=Transformer.REG1B  terminal=1 mode=2
+New Monitor.REG1C_tap element=Transformer.REG1C  terminal=1 mode=2
+New Monitor.REG2A_tap element=Transformer.REG2A  terminal=1 mode=2
+New Monitor.REG2B_tap element=Transformer.REG2B  terminal=1 mode=2
+New Monitor.REG2C_tap element=Transformer.REG2C  terminal=1 mode=2
+
+
+
+set mode = daily
+set stepsize = 1h
+set number = 24
+
+set maxcontroliter=300
+solve
+
+
+Export monitors s890_voltage
+Plot monitor object= s890_voltage channels=(1 ) bases=[2401.77711983 ]
+
+
+
+
+Buscoords IEEE34_BusXY.csv
+
+show voltages LN Nodes
+show currents residual=y elements
+show powers kva element
+show taps
+
+Set MarkTransformers=yes
+// let OpenDSS compute coordinates for the mid points (not in the buscoords file)
+Interpolate  ! requires an energyMeter
+plot circuit Power max=2000 y y C1=$00FF0000 1ph=3
+
+Plot profile phases=all
+
+!-----------------------------------------------------------------------------
+!--------2nd Run Script for 34-bus Test Case---------------------------------
+!-----------------------------------------------------------------------------
+
+! This script forces the regulator taps to the same values reported in the 
+! published results
+
+Compile ieee34Mod2.dss
+
+! Force Regulator Transformer taps
+Transformer.reg1a.wdg=2 Tap=(0.00625  12  * 1 +)   ! Tap 12
+Transformer.reg1b.wdg=2 Tap=(0.00625   5 * 1 +)    ! Tap 5
+Transformer.reg1c.wdg=2 Tap=(0.00625   5  * 1 +)   ! Tap 5
+Transformer.reg2a.wdg=2 Tap=(0.00625  13 * 1 +)    ! Tap 13
+Transformer.reg2b.wdg=2 Tap=(0.00625  11 * 1 +)    ! Tap 11
+Transformer.reg2c.wdg=2 Tap=(0.00625  12 * 1 +)    ! Tap 12
+
+Set Controlmode=OFF  ! prevents further tap changes
+
+set maxcontroliter=300
+solve
+
+show voltages LN Nodes
+show currents residual=y elements
+show powers kva element
+show taps
